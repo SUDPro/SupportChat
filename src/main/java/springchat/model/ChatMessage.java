@@ -2,29 +2,47 @@ package springchat.model;
 
 
 import jdk.internal.instrumentation.TypeMapping;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+
 
 import javax.persistence.*;
 import java.awt.*;
 import java.util.Date;
 
-@Entity
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
 public class ChatMessage {
-  public enum MessageType {
+    public ChatMessage() {
+    }
+
+    public ChatMessage(Long id, MessageType messageType, String content, String sender, String roomId, Date date) {
+        this.id = id;
+        this.messageType = messageType;
+        this.content = content;
+        this.sender = sender;
+        this.roomId = roomId;
+        this.date = date;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public MessageType getMessageType() {
+        return messageType;
+    }
+
+    public void setMessageType(MessageType messageType) {
+        this.messageType = messageType;
+    }
+
+    public enum MessageType {
     CHAT, JOIN, LEAVE
   }
-
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  
   private Long id;
-
-  @Enumerated(EnumType.STRING)
+  
   private MessageType messageType;
 
   private String content;
