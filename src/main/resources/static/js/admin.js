@@ -19,7 +19,7 @@ function update(message) {
     var chats = document.getElementById("messages");
     if (chat === null || chat === undefined) {
         var tr = document.createElement("tr");
-
+        tr.id = roomId
         var td1 = document.createElement("td");
         td1.innerHTML = '<form method=get">' +
             '<input type="hidden" name="roomId" value="' + roomId + '"/>' +
