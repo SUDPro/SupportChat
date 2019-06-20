@@ -1,11 +1,4 @@
 package springchat.model;
-
-
-import jdk.internal.instrumentation.TypeMapping;
-
-
-import javax.persistence.*;
-import java.awt.*;
 import java.util.Date;
 
 public class ChatMessage {
@@ -40,9 +33,9 @@ public class ChatMessage {
     public enum MessageType {
     CHAT, JOIN, LEAVE
   }
-  
+
   private Long id;
-  
+
   private MessageType messageType;
 
   private String content;
@@ -63,6 +56,34 @@ public class ChatMessage {
     return roomId;
   }
 
+  public void setRoomId(String roomId) {
+    this.roomId = roomId;
+  }
+
+  public MessageType getType() {
+    return messageType;
+  }
+
+  public void setType(MessageType messageType) {
+    this.messageType = messageType;
+  }
+
+  public String getContent() {
+    return content;
+  }
+
+  public void setContent(String content) {
+    this.content = content;
+  }
+
+  public String getSender() {
+    return sender;
+  }
+
+  public void setSender(String sender) {
+    this.sender = sender;
+  }
+}
   public void setRoomId(String roomId) {
     this.roomId = roomId;
   }
