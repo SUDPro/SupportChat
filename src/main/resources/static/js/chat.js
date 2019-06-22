@@ -1,8 +1,7 @@
 'use strict';
 
 var nameInput = $('#name');
-var roomInput = $('#room-id').val();
-var usernamePage = document.querySelector('#username-page');
+var roomInput = $('#roomId').val();
 var chatPage = document.querySelector('#chat-page');
 var usernameForm = document.querySelector('#usernameForm');
 var messageForm = document.querySelector('#messageForm') ;
@@ -22,19 +21,17 @@ var colors = [
     '#ffc107', '#ff85af', '#FF9800', '#39bbb0'
 ];
 
-function connect(event) {
-    username = nameInput.val().trim();
-    Cookies.set('name', username);
+window.onload = connect;
+
+function connect() {
+    username = document.getElementById("name").value;
     if (username) {
-        usernamePage.classList.add('hidden');
-        chatPage.classList.remove('hidden');
 
         var socket = new SockJS('/ws');
         stompClient = Stomp.over(socket);
 
         stompClient.connect({}, onConnected, onError);
     }
-    event.preventDefault();
 }
 
 // Leave the current room and enter a new one.
@@ -94,7 +91,6 @@ function onMessageReceived(payload) {
     } else {
         messageElement.classList.add('chat-message');
 
-
         var usernameElement = document.createElement('span');
         var usernameText = document.createTextNode(message.sender + ": ");
         usernameElement.appendChild(usernameText);
@@ -113,7 +109,7 @@ function onMessageReceived(payload) {
 
 $(document).ready(function() {
 
-    usernamePage.classList.remove('hidden');
-    usernameForm.addEventListener('submit', connect, true);
+// usernamePage.classList.remove('hidden');
+// usernameForm.addEventListener('submit', connect, true);
     messageForm.addEventListener('submit', sendMessage, true);
 });

@@ -9,25 +9,10 @@
 <noscript>
   <h2>Sorry! Your browser doesn't support Javascript</h2>
 </noscript>
-
-<div id="username-page">
-  <div class="username-page-container">
-    <h1 class="title">Enter a username and room ID</h1>
-    <form id="usernameForm" name="usernameForm">
-      <div class="form-group">
-        <input type="text" id="name" placeholder="Username" autocomplete="off" value="Оператор" class="form-control" />
-      </div>
-      <div class="form-group">
-        <input type="text" id="room-id" value="${roomId}" placeholder="Room ID" autocomplete="off" class="form-control" />
-      </div>
-      <div class="form-group">
-        <button type="submit" id="chatButton" class="accent username-submit">Start Chatting</button>
-      </div>
-    </form>
-  </div>
-</div>
-
-<div id="chat-page" class="hidden">
+<input id="roomId" hidden value="${roomId}">
+<input id="name" hidden value="Оператор">
+<div id="chat-page">
+  <a href="/admin" style="color: white">Назад</a>
   <div class="chat-container">
     <div class="chat-header">
       <h2>Chat <span id="room-id-display"></span></h2>
