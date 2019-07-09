@@ -3,6 +3,7 @@ package springchat.controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestParam;
 import springchat.model.ChatMessage;
+import springchat.model.Item;
 import org.slf4j.Logger;
 import org.springframework.http.ResponseEntity;
 import org.slf4j.LoggerFactory;
