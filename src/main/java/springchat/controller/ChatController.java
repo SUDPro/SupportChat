@@ -74,12 +74,18 @@ public class ChatController {
     
     @GetMapping("/api/allItems")
     public ResponseEntity<Object> getAllItems() {
+        List<Item> items = new ArrayList<Item>();
         Item item = Item.builder()
             .name("Document 200")
             .status("Подтверждено")
             .description("This is document from server")
             .build();
-        return ResponseEntity.ok(item);
+        Item item = Item.builder()
+            .name("Document 300")
+            .status("Подтверждено")
+            .description("This is 2 document from server")
+            .build();
+        return ResponseEntity.ok(items);
     }
 
     @GetMapping(value = "/admin", params = {"roomId"})
