@@ -72,7 +72,7 @@ public class ChatController {
     
      @PostMapping("/api/allItems")
     public ResponseEntity<Object> getAllItems() {
-        List<Item> items = new ArrayList<Item>();
+        Item item = new Item("Documetn1","Ожидает решения", "New Descripiton");
         return ResponseEntity.ok().build();
     }
 
