@@ -81,11 +81,13 @@ public class ChatController {
             .status("Подтверждено")
             .description("This is document from server")
             .build();
-        Item item = Item.builder()
+        Item item1 = Item.builder()
             .name("Document 300")
             .status("Подтверждено")
             .description("This is 2 document from server")
             .build();
+        items.add(item);
+        items.add(item1);
         return ResponseEntity.ok(items);
     }
 
