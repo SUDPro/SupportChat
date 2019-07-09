@@ -79,7 +79,7 @@ public class ChatController {
             .status("Подтверждено")
             .description("This is document from server")
             .build();
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok(item);
     }
 
     @GetMapping(value = "/admin", params = {"roomId"})
