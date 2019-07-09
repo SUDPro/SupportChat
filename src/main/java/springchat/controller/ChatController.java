@@ -74,11 +74,10 @@ public class ChatController {
     
     @GetMapping("/api/allItems")
     public ResponseEntity<Object> getAllItems() {
-        Item item = Item.builder()
-                    .name("Document 1")
-                    .status("В ожидании")
-                    .description("Description11")
-                    .build();
+        Item item = new Item();
+        item.setName("Document from server");
+        item.setStatus("Подтверждено");
+        item.setDescription("Description");
         return ResponseEntity.ok().build();
     }
 
