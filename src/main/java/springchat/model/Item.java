@@ -20,5 +20,5 @@ public class Item{
   private Long id;
   private String name;
   private Srting status;
-  private Strig description;
+  private String description;
 }
