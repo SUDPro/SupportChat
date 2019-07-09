@@ -69,6 +69,12 @@ public class ChatController {
     public String getTest(){
         return "test";
     }
+    
+     @PostMapping("/api/allItems")
+    public ResponseEntity<Object> getAllItems() {
+        List<Item> items = new ArrayList<Item>();
+        return ResponseEntity.ok().build();
+    }
 
     @GetMapping(value = "/admin", params = {"roomId"})
     public String getOneChatPage(@RequestParam("roomId") String roomId, ModelMap modelMap){
