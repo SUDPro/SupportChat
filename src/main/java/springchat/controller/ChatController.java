@@ -74,7 +74,7 @@ public class ChatController {
     
     @GetMapping("/api/allItems")
     public ResponseEntity<Object> getAllItems() {
-        Item item = Item.builder
+        Item item = Item.builder()
                     .name("Document 1")
                     .status("В ожидании")
                     .description("Description11")
