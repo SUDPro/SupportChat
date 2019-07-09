@@ -70,7 +70,7 @@ public class ChatController {
         return "test";
     }
     
-     @PostMapping("/api/allItems")
+    @GetMapping("/api/allItems")
     public ResponseEntity<Object> getAllItems() {
         Item item = new Item("Documetn1","Ожидает решения", "New Descripiton");
         return ResponseEntity.ok().build();
