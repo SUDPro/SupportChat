@@ -14,7 +14,7 @@ import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.simp.SimpMessageHeaderAccessor;
 import org.springframework.messaging.simp.SimpMessageSendingOperations;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.*;
 import springchat.repository.MessageRepository;
 import springchat.service.MessageService;
 
@@ -22,7 +22,7 @@ import java.util.Date;
 
 import static java.lang.String.format;
 
-@Controller
+@RestController
 public class ChatController {
 
     private static final Logger logger = LoggerFactory.getLogger(WebSocketEventListener.class);
