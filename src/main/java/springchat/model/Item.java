@@ -12,12 +12,13 @@ import java.awt.*;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class Item{
   
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
   private String name;
-  private Srting status;
+  private String status;
   private String description;
 }
