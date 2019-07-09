@@ -12,6 +12,7 @@ import java.awt.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Data
 public class Item{
   
   @Id
