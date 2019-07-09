@@ -11,8 +11,6 @@ import java.awt.*;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
-@Data
 public class Item{
   
   @Id
