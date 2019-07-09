@@ -9,7 +9,6 @@ import javax.persistence.*;
 import java.awt.*;
 
 @Data
-@Builder
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
