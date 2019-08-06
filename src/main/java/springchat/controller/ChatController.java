@@ -23,7 +23,7 @@ import java.util.Date;
 
 import static java.lang.String.format;
 
-@RestController
+@Controller
 public class ChatController {
 
     private static final Logger logger = LoggerFactory.getLogger(WebSocketEventListener.class);
