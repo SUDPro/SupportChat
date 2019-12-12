@@ -3,7 +3,6 @@ package springchat.controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestParam;
 import springchat.model.ChatMessage;
-import springchat.model.Item;
 import org.slf4j.Logger;
 import org.springframework.http.ResponseEntity;
 import org.slf4j.LoggerFactory;
@@ -25,8 +24,6 @@ import static java.lang.String.format;
 
 @Controller
 public class ChatController {
-
-    private static final Logger logger = LoggerFactory.getLogger(WebSocketEventListener.class);
 
     @Autowired
     private SimpMessageSendingOperations messagingTemplate;
@@ -71,12 +68,6 @@ public class ChatController {
     @GetMapping("/test")
     public String getTest(){
         return "test";
-    }
-    
-    @GetMapping("/api/allItems")
-    public ResponseEntity<Object> getAllItems() {
-        List<Item> items = new ArrayList<Item>();
-        return ResponseEntity.ok(items);
     }
 
     @GetMapping(value = "/admin", params = {"roomId"})
